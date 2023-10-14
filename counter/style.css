@@ -1,0 +1,15 @@
+
+.parent {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    color: blue;
+    font-size: 8rem;
+    margin: 0;
+    margin-bottom: 10px;
+}
