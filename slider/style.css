@@ -14,6 +14,7 @@ html{
 
 body{
     font-family: 'Poppins', sans-serif;
+    background-color: #EEF4FA;
 }
 
 .container{
@@ -27,19 +28,23 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 5rem;
 }
 
 .slider-container {
     width: 500px;
     height: 70vh;
     text-align: center;
-    border: 2px solid red;
 }
 
 img {
     width: 100px;
-    /* height: 150px;
-    border-radius: 50%; */
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: 10px auto;
+    display: block;
 }
 
 .headline h1 {
@@ -54,10 +59,63 @@ img {
     content: '';
     width: 10%;
     height: 0.225rem;
-    background-color: blue;
+    background-color: #4C9ADB;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 0.625rem;
+}
+
+.main-slider {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px 5px #8f8e8e4d;
+    height: 75%;
+    padding: 1em;
+}
+
+.main-slider p.name {
+    font-weight: bold;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.main-slider p.job {
+    font-size: 1.1rem;
+    color: #57a9e4;
+    font-weight: 600;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 0.5em 0;
+    cursor: pointer;
+}
+
+.btn-left, .btn-right {
+    color: #57a9e4;
+    margin-top: 10px;
+}
+
+.btn-left:hover, .btn-right:hover {
+    color: #1c689e;
+}
+
+.btn-left {
+    margin-right: 8px;
+}
+
+.btn-right {
+    margin-left: 8px;
+}
+
+.btn-primary {
+    color: #4C9ADB;
+    border: 1px solid #4C9ADB;
+    padding: 0.2em;
+    border-radius: 5px;
+    background-color: #E8F5FE;
 }
