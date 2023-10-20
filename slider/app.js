@@ -1,11 +1,11 @@
 
 const data = [
-    {
+    
         id : 1,
         img : './img/male-photo1.jpg',
         name : 'John Doe',
         job : 'WEB DEVELOPER',
-        description : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores a nam sapiente sint. Ipsum ipsam aliquid accusantium cupiditate quae mollitia voluptate blanditiis nihil, quisquam corporis cumque exercitationem explicabo! Praesentium, iure?'
+      {  description : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores a nam sapiente sint. Ipsum ipsam aliquid accusantium cupiditate quae mollitia voluptate blanditiis nihil, quisquam corporis cumque exercitationem explicabo! Praesentium, iure?'
     },
     {
         id : 2,
