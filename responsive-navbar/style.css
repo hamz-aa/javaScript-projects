@@ -16,6 +16,11 @@ li {
     align-items: center;
 }
 
+.navbar {
+    padding: 1.5em 0;
+    background-color: aqua;
+}
+
 .mid-content ul, 
 .social ul {
     display: flex;
