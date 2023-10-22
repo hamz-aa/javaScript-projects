@@ -42,3 +42,11 @@ li {
 input {
     display: none;
 }
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
