@@ -69,6 +69,7 @@ function allHandler(){
 }
 
 function breakfastHandler(){
+    card.innerHTML = '';
     for(let i = 0; i < content.length; i++){
         card = document.querySelector(`.card-${i+1}`);
         for(let j = 0; j < content[i].category.length; j++){
@@ -82,9 +83,6 @@ function breakfastHandler(){
             </div>
             <p class="sub-text">${content[i].subText}</p>
         </div>`
-            }
-            else {
-                card.classList.add('invisible');
             }
         }
     }
