@@ -1,7 +1,7 @@
 
 const nav = document.querySelector('.nav-getter');
-const container = document.querySelector('container-getter');
-const logo = document.querySelector('logo-getter');
+const container = document.querySelector('.container-getter');
+const logo = document.querySelector('.logo-getter');
 const midContent = document.querySelector('.mid-content-getter');
 const social = document.querySelector('.social-getter');
 const icon = document.querySelector('.icon');
@@ -9,10 +9,12 @@ const closeIcon = document.querySelector('.close-icon');
 const midContentUl = document.querySelector('.mid-content-ul-getter');
 const socialUl = document.querySelector('.social-ul-getter');
 
+let count = 0;
+
 window.onresize = function (){
   let width = window.innerWidth;
   
-  if(width < 700){
+  if(width < 800){
     midContent.classList.add('invisible');
     social.classList.add('invisible');
 
@@ -33,8 +35,6 @@ window.onresize = function (){
     social.classList.remove('invisible');
   }
 }
-
-let count = 0;
 
 function hamburgerMenu() {
   if(count % 2 == 0){
@@ -60,6 +60,12 @@ function hamburgerMenu() {
 
     closeIcon.classList.add('visible');
     closeIcon.classList.remove('invisible');
+    
+    midContent.classList.add('visible');
+    social.classList.add('visible');
+
+    midContent.classList.remove('invisible');
+    social.classList.remove('invisible');
   }
   else {
     count++;
@@ -84,5 +90,43 @@ function hamburgerMenu() {
     
     closeIcon.classList.remove('visible');
     closeIcon.classList.add('invisible');
+
+    midContent.classList.add('invisible');
+    social.classList.add('invisible');
+
+    midContent.classList.remove('visible');
+    social.classList.remove('visible');
   }
+
 }
+
+function closeHandler(){
+    count++;
+
+    nav.classList.remove('navbar-fluid');
+    nav.classList.add('navbar');
+
+    container.classList.remove('container-fluid');
+    container.classList.add('container');
+
+    logo.classList.remove('logo-fluid');
+    logo.classList.add('logo');
+
+    midContent.classList.add('mid-content');
+
+    social.classList.remove('social-fluid');
+    social.classList.add('social');
+
+    midContentUl.classList.remove('mid-content-fluid-ul');
+    
+    socialUl.classList.remove('social-fluid-ul');
+    
+    closeIcon.classList.remove('visible');
+    closeIcon.classList.add('invisible');
+
+    midContent.classList.add('invisible');
+    social.classList.add('invisible');
+
+    midContent.classList.remove('visible');
+    social.classList.remove('visible');
+  }

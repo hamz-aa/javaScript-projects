@@ -37,7 +37,12 @@ li {
     gap: 15px;
 }
 
-.mid-content ul li:hover {
+.mid-content-ul-getter li {
+    width: fit-content;
+    border-bottom: 1px solid #fff;
+}
+
+.mid-content-ul-getter li:hover {
     border-bottom: 1px solid;
     cursor: pointer;
 }
@@ -122,4 +127,17 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.icon {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+}
+
+.icon button {
+    position: absolute;
+    right: 0;
+    top: 30px;
 }
