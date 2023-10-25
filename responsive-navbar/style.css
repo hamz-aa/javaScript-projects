@@ -66,3 +66,60 @@ button {
 .logo {
     margin-left: 20px;
 }
+
+.container-fluid {
+    width: 85%;
+    height: 100%;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;    
+}
+
+.navbar-fluid {
+    padding: 1em 1.5em;
+    background-color: #fff;
+    box-shadow: none;
+    width: 350px;
+    height: 100vh;
+}
+
+.mid-content-fluid-ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    color: #6A7889;
+    font-size: 1.2rem;
+    margin-top: -180px;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.social-fluid {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.social-fluid-ul {
+    display: flex;
+    gap: 12px;
+    margin: auto;
+    width: fit-content;
+    color: #79A6CE;
+}
+
+.close-icon {
+    color: red;
+    font-size: 1.4rem;
+    margin-right: -50px;
+    margin-top: 5px;
+}
+
+.logo-fluid {
+    width: 100%;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
