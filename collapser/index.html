@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
     <script src="https://kit.fontawesome.com/953afe11c5.js" crossorigin="anonymous"></script>
     <title>Collapser</title>
 </head>
@@ -16,28 +17,28 @@
                 <div class="content content-1">
                     <div class="main-content maincontent-1">
                         <p>Do you accept all major credit cards?</p>
-                        <button><i class="fa-regular fa-square-plus"></i></button>
+                        <button onclick="collapse()"><i class="fa-regular fa-square-plus"></i></button>
                     </div>
-                    <div class="subcontent subcontent-1">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione consectetur ea voluptatem hic corporis consequatur quam. Suscipit facere fugiat quam.
+                    <div class="subcontent subcontent-1 invisible">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione consectetur ea voluptatem hic corporis consequatur quam. Suscipit facere fugiat quam.</p>
                     </div>
                 </div>
                 <div class="content content-2">
-                    <div class="main-content maincontent-1">
+                    <div class="main-content maincontent-2">
                         <p>Do you support local farmers?</p>
-                        <button><i class="fa-regular fa-square-plus"></i></button>
+                        <button onclick="collapse()"><i class="fa-regular fa-square-plus"></i></button>
                     </div>
-                    <div class="subcontent subcontent-1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus similique eligendi eveniet vel molestiae neque molestias error velit delectus dolores?
+                    <div class="subcontent subcontent-2 invisible">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus similique eligendi eveniet vel molestiae neque molestias error velit delectus dolores?</p>
                     </div>
                 </div>
                 <div class="content content-3">
-                    <div class="main-content maincontent-1">
+                    <div class="main-content maincontent-3">
                         <p>Do you use organic ingredients?</p>
-                        <button><i class="fa-regular fa-square-plus"></i></button>
+                        <button onclick="collapse()"><i class="fa-regular fa-square-plus"></i></button>
                     </div>
-                    <div class="subcontent subcontent-1">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam culpa voluptates nisi repudiandae quos tempora atque perferendis minus perspiciatis nostrum!
+                    <div class="subcontent subcontent-3 invisible">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam culpa voluptates nisi repudiandae quos tempora atque perferendis minus perspiciatis nostrum!</p>
                     </div>
                 </div>
             </div>
