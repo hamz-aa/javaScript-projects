@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal {
+    height: 100vh;
+    /* background: url('./img/pexels-fwstudio-168453.jpg'); */
+    background: url('./img/pexels-huseyn-kamaladdin-667838.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
+
+.modal-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.real-modal {
+    width: 40%;
+    height: 40vh;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+button {
+    background-color: #0174BE;
+    padding: 0.5em 1em;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1.5px solid #0174BE;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #0174BE;
+    transition: background 0.3s ease-in-out;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 36vh;
+    z-index: 10;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+.close-icon {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 0.2em;
+    margin-right: 18px;
+    margin-top: 8px;
+    border: 1.5px solid #fff;
+    transition: border 0.3s ease-in-out;
+}
+
+.close-icon:hover {
+    color: red;
+    border: 1.5px solid red;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+.transparent-background {
+    background-color: rgba(137, 207, 243, 0.5);
+}
