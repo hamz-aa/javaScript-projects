@@ -13,21 +13,6 @@ function submitHandler() {
 
     myUnorderdList.innerHTML += li;
     val = '';
-    // const li = document.createElement('li');
-    // const span1 = document.createElement('span');
-    // const span2 = document.createElement('span');
-
-    // li.textContent = listItemInput.value;
-    // span1.innerText = 'Edit';
-    // span2.innerText = 'Delete';
-
-    // li.appendChild(span1)
-    // li.appendChild(span2)
-
-    // span1.classList.add('listButton')
-    // span2.classList.add('listButton')
-
-    // myUnorderdList.appendChild(li)
 }
 
 function editHandler(val){
