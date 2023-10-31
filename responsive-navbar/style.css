@@ -79,7 +79,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;    
+    align-items: flex-start;
 }
 
 .navbar-fluid {
@@ -140,4 +140,14 @@ button {
     position: absolute;
     right: 0;
     top: 30px;
+}
+
+.container-animation-1 {
+    position: relative;
+    transform: translateX(-110%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.container-animation-2 {
+    transform: translateX(0%);
 }
