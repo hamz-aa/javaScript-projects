@@ -23,8 +23,6 @@ window.onresize = function (){
     
     midContent.classList.remove('visible');
     social.classList.remove('visible');
-
-    container.classList.add('container-animation-1');
   }
   else {
     midContent.classList.add('visible');
@@ -35,8 +33,6 @@ window.onresize = function (){
     
     midContent.classList.remove('invisible');
     social.classList.remove('invisible');
-
-    container.classList.remove('container-animation-1');
   }
 }
 
@@ -70,8 +66,6 @@ function hamburgerMenu() {
 
     midContent.classList.remove('invisible');
     social.classList.remove('invisible');
-
-    container.classList.add('container-animation-2');
   }
   else {
     count++;
@@ -102,8 +96,6 @@ function hamburgerMenu() {
 
     midContent.classList.remove('visible');
     social.classList.remove('visible');
-
-    container.classList.remove('container-animation-2');
   }
 
 }
