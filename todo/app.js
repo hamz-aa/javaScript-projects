@@ -72,5 +72,5 @@ function confirmHandler(num){
     li.prepend(p);
 
     btn.setAttribute('onclick', `editHandler(${num})`);
-    btn.textContent = 'Edit'
+    btn.textContent = 'Edit';
 }
