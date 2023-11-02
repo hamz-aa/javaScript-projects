@@ -76,12 +76,12 @@ img {
 
 .headline h1::after {
     content: '';
-    width: 10%;
+    width: 15%;
     height: 0.225rem;
     background-color: #4C9ADB;
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 51%;
     transform: translate(-50%, -50%);
     border-radius: 0.625rem;
 }
@@ -90,7 +90,7 @@ img {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0px 0px 5px 5px #8f8e8e4d;
-    height: 60%;
+    height: 75%;
     padding: 1em;
 }
 
