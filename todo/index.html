@@ -8,20 +8,20 @@
     <title>Todo App</title>
 </head>
 <body>
-    <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-        <div>
-            <input type="text" placeholder="Type your text here" name="listItemInput" id="listItemInput">
-            <button type="submit" onclick="submitHandler()">Submit</button>
+
+    <div class="todo">
+        <div class="todo-wrapper">
+            <input type="text" placeholder="Type your text here" name="input" id="input" class="input">
+            <button type="submit" class="btn" onclick="submitHandler()">Submit</button>
+            <ul class="todo-data">
+                <!-- <li class="todo-data-wrapper">
+                    <p class='todo-text'>item</p>
+                    <button class="editBtn" onclick="editHandler()">Edit</button>
+                    <button class="deleteBtn" onclick="deleteHandler()">Delete</button>
+                </li> -->
+            </ul>
         </div>
-        <ul>
-            <!-- <li>
-                Breakfast
-                <div>
-                    <span class="listButton" id="edit">Edit</span>
-                    <span class="listButton" id="delete">Delete</span>
-                </div>
-            </li> -->
-        </ul>
     </div>
+
 </body>
 </html>
