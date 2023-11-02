@@ -42,14 +42,35 @@ function editHandler(num){
 
     const li = document.querySelector(`.todo-data-wrapper-${num}`);
     const p = document.querySelector(`.todo-data-wrapper-${num} p`);
+    const btn = document.querySelector(`.todo-data-wrapper-${num} .editBtn`);
 
     inp.value = p.textContent;
     p.remove();
     li.prepend(inp);
+
+    btn.textContent = 'Confirm';
+    btn.setAttribute('onclick', `confirmHandler(${num})`);
 }
 
 function deleteHandler(num){
     const li = document.querySelector(`.todo-data-wrapper-${num}`);
     li.innerHTML = ''
     li.remove();
+}
+
+function confirmHandler(num){
+    const p = document.createElement('p');
+    p.setAttribute('class', 'todo-text');
+
+    const li = document.querySelector(`.todo-data-wrapper-${num}`);    
+    const inp = document.querySelector(`.todo-data-wrapper-${num} input`);
+    const btn = document.querySelector(`.todo-data-wrapper-${num} .editBtn`);
+
+    p.textContent = inp.value;
+
+    inp.remove();
+    li.prepend(p);
+
+    btn.setAttribute('onclick', `editHandler(${num})`);
+    btn.textContent = 'Edit'
 }

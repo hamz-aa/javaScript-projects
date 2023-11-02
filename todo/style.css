@@ -63,4 +63,5 @@ p {
     background-color: #fff;
     border-radius: 6px;
     padding: 0.5em;
+    outline: auto;
 }
