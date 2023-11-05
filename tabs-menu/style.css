@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.tabs-menu {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 5em;
+}
+
+.tabs-wrapper {
+    border: 2px solid red;
+    width: 70%;
+}
+
+.tabs-wrapper > h1,
+.tabs-wrapper > p {
+    text-align: center;
+}
+
+.main-content {
+    display: flex;
+}
+
+img {
+    width: 500px;
+}
