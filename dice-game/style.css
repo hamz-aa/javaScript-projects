@@ -41,7 +41,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .player-1 {
@@ -96,4 +97,89 @@ body {
 
 .current-text {
     font-size: 0.8rem;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    padding: 1em 2em;
+    border-radius: 30px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f4f4f4;
+}
+
+i {
+    margin-right: 8px;
+}
+
+.show {
+    height: 70px;
+    width: 70px;
+    background-color: #fff;
+    display: grid;
+    place-items: center;
+}
+
+.show span {
+    background-color: #000;
+    display: inline-block;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+}
+
+.one {
+    place-content: center;
+}
+
+.two {
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+/* .dice-2 {
+    grid-area: 2 / 2;
+} */
+
+.three {
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+/* .dice-2 {
+    grid-area: 2 / 2;
+}
+.dice-3 {
+    grid-area: 3 / 3;
+} */
+
+.four {
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.five {
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+/* .dice-2 {
+    grid-area: 1 / 3;
+}
+
+.dice-3 {
+    grid-area: 2 / 2;
+}
+
+.dice-4 {
+    grid-area: 3 / 1;
+}
+
+.dice-5 {
+    grid-area: 3 / 3;
+} */
+
+.six {
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
 }
