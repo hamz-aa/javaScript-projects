@@ -51,6 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 .player-2 {
@@ -60,4 +61,39 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+}
+
+.name {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.total-score {
+    font-weight: 400;
+    font-size: 2.8rem;
+    margin-top: -70px;
+}
+
+.current-score {
+    padding: 1em 2.5em;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.current-score-1 {
+    background-color: var(--secondary);
+}
+
+.current-score-2 {
+    background-color: var(--primary);
+}
+
+.score {
+    font-size: 1.8rem;
+    margin-top: 6px;
+}
+
+.current-text {
+    font-size: 0.8rem;
 }
