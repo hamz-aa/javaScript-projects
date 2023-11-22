@@ -9,6 +9,8 @@ const player2TotalScore = document.querySelector(".total-score-2");
 const player2Score = document.querySelector(".score-2");
 
 let playerName = document.querySelectorAll(".name");
+let playerName1 = document.querySelector(".name-1");
+let playerName2 = document.querySelector(".name-2");
 
 const totalScore = document.querySelectorAll(".total-score");
 const score = document.querySelectorAll(".score");
@@ -18,8 +20,10 @@ const show = document.querySelector(".show");
 const info = document.querySelector(".info");
 const infoToggler = document.querySelector(".infoToggler");
 const btnStart = document.querySelector(".btn-start");
+const infoWrapper = document.querySelector(".info-wrapper");
 
 info.style.display = "none";
+infoWrapper.style.display = "none";
 
 let toggleFlag = true;
 
@@ -55,6 +59,9 @@ gridAreaReset();
 
 player1 = true;
 player2 = false;
+
+playerName1.style.border = "2px solid";
+playerName2.style.border = "none";
 
 totalScore.forEach((total) => {
   total.textContent = 0;
@@ -111,11 +118,15 @@ rollDice.addEventListener("click", () => {
     if (player1) {
       player1 = false;
       player2 = true;
+      playerName2.style.border = "2px solid";
+      playerName1.style.border = "none";
       player1Score.textContent = 0;
       player1TotalScore.textContent = 0;
     } else {
       player2 = false;
       player1 = true;
+      playerName2.style.border = "none";
+      playerName1.style.border = "2px solid";
       player2Score.textContent = 0;
       player2TotalScore.textContent = 0;
     }
@@ -133,6 +144,8 @@ holdDice.addEventListener("click", () => {
   if (player1) {
     player1 = false;
     player2 = true;
+    playerName2.style.border = "2px solid";
+    playerName1.style.border = "none";
     player1TotalScore.textContent =
       parseInt(player1TotalScore.textContent) +
       parseInt(player1Score.textContent);
@@ -140,6 +153,8 @@ holdDice.addEventListener("click", () => {
   } else {
     player2 = false;
     player1 = true;
+    playerName2.style.border = "none";
+    playerName1.style.border = "2px solid";
     player2TotalScore.textContent =
       parseInt(player2TotalScore.textContent) +
       parseInt(player2Score.textContent);
@@ -149,41 +164,45 @@ holdDice.addEventListener("click", () => {
 
 infoToggler.addEventListener("click", () => {
   if (toggleFlag) {
+    infoWrapper.style.display = "flex";
     info.style.display = "grid";
+    infoWrapper.classList.add("transparent-background");
     toggleFlag = false;
   } else {
+    infoWrapper.style.display = "none";
+    infoWrapper.classList.remove("transparent-background");
     info.style.display = "none";
     toggleFlag = true;
   }
 });
 
 btnStart.addEventListener("click", () => {
+  infoWrapper.style.display = "none";
+  infoWrapper.classList.remove("transparent-background");
   info.style.display = "none";
   toggleFlag = true;
 });
+
+let removedElement;
 
 playerName.forEach((name) => {
   name.addEventListener("click", () => {
     let parent = name.parentElement;
     let input = document.createElement("input");
     input.setAttribute("type", "text");
+    input.setAttribute("class", "name-input");
     input.setAttribute("onKeyPress", `inputName(${"event"})`);
     parent.prepend(input);
-    name.remove();
+    removedElement = parent.removeChild(name);
   });
 });
 
 function inputName(e) {
   if (e.keyCode === 13) {
     let parent = e.target.parentElement;
-    let pClass = parent.getAttribute("class");
-    let n = pClass.slice(pClass.length - 1, pClass.length);
-    let heading = document.createElement("h1");
-    heading.textContent = e.target.value;
-    heading.setAttribute("class", `name name-${n}`);
-    parent.prepend(heading);
+    removedElement.textContent = e.target.value;
+    parent.prepend(removedElement);
     e.currentTarget.remove();
     playerName = document.querySelectorAll(".name");
-    console.log(playerName);
   }
 }
