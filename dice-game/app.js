@@ -8,10 +8,20 @@ const player1Score = document.querySelector(".score-1");
 const player2TotalScore = document.querySelector(".total-score-2");
 const player2Score = document.querySelector(".score-2");
 
+let playerName = document.querySelectorAll(".name");
+
 const totalScore = document.querySelectorAll(".total-score");
 const score = document.querySelectorAll(".score");
 
 const show = document.querySelector(".show");
+
+const info = document.querySelector(".info");
+const infoToggler = document.querySelector(".infoToggler");
+const btnStart = document.querySelector(".btn-start");
+
+info.style.display = "none";
+
+let toggleFlag = true;
 
 const dice1 = document.querySelector(".dice-1");
 const dice2 = document.querySelector(".dice-2");
@@ -136,3 +146,44 @@ holdDice.addEventListener("click", () => {
     player2Score.textContent = 0;
   }
 });
+
+infoToggler.addEventListener("click", () => {
+  if (toggleFlag) {
+    info.style.display = "grid";
+    toggleFlag = false;
+  } else {
+    info.style.display = "none";
+    toggleFlag = true;
+  }
+});
+
+btnStart.addEventListener("click", () => {
+  info.style.display = "none";
+  toggleFlag = true;
+});
+
+playerName.forEach((name) => {
+  name.addEventListener("click", () => {
+    let parent = name.parentElement;
+    let input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("onKeyPress", `inputName(${"event"})`);
+    parent.prepend(input);
+    name.remove();
+  });
+});
+
+function inputName(e) {
+  if (e.keyCode === 13) {
+    let parent = e.target.parentElement;
+    let pClass = parent.getAttribute("class");
+    let n = pClass.slice(pClass.length - 1, pClass.length);
+    let heading = document.createElement("h1");
+    heading.textContent = e.target.value;
+    heading.setAttribute("class", `name name-${n}`);
+    parent.prepend(heading);
+    e.currentTarget.remove();
+    playerName = document.querySelectorAll(".name");
+    console.log(playerName);
+  }
+}
