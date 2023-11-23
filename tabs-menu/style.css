@@ -2,6 +2,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 * {
@@ -19,7 +20,6 @@ body {
 }
 
 .tabs-wrapper {
-  border: 2px solid red;
   width: 80%;
 }
 
@@ -49,6 +49,7 @@ img {
 .tabs-wrapper > p {
   display: block;
   margin: 20px auto;
+  color: #656d75;
 }
 
 .top-content button {
@@ -75,4 +76,21 @@ img {
   border-radius: 0 4px 4px 0;
   border: 2px solid #eef4fa;
   border-left: none;
+}
+
+.bottom-content {
+  width: 97%;
+  padding: 1em;
+  background-color: #fff;
+  height: 90%;
+}
+
+.bottom-content .heading {
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.bottom-content .text {
+  color: #656d75;
 }
