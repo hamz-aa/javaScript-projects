@@ -1,30 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .tabs-menu {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding-top: 5em;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 5em;
+  background-color: #eef4fa;
 }
 
 .tabs-wrapper {
-    border: 2px solid red;
-    width: 70%;
+  border: 2px solid red;
+  width: 80%;
 }
 
 .tabs-wrapper > h1,
 .tabs-wrapper > p {
-    text-align: center;
+  text-align: center;
 }
 
 .main-content {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-image {
+  width: 48%;
+}
+
+.image-content {
+  width: 48%;
 }
 
 img {
-    width: 500px;
+  width: 500px;
+  border-radius: 7px;
+}
+
+.tabs-wrapper > p {
+  display: block;
+  margin: 20px auto;
+}
+
+.top-content button {
+  width: 32%;
+  height: 40px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background-color: #d0d0d7;
+}
+
+.top-content .btn-history {
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #eef4fa;
+  border-right: none;
+}
+
+.top-content .btn-vision {
+  border: 2px solid #eef4fa;
+  border-right: none;
+  border-left: none;
+}
+
+.top-content .btn-goal {
+  border-radius: 0 4px 4px 0;
+  border: 2px solid #eef4fa;
+  border-left: none;
 }
