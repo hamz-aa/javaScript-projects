@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  background-color: #d5dce4;
+}
+
+video {
+  margin: auto;
+  display: block;
+  height: 400px;
+}
+
+h1 {
+  width: fit-content;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+button {
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  color: #409be4;
+  padding: 0.5em 1em;
+  background-color: #f0f0f0;
+}
+
+button:hover {
+  border: 2px solid #409be4;
+  background-color: #fff;
+}
+
+.btn-group {
+  position: absolute;
+  top: 80%;
+  left: 32%;
+}
+
+.play {
+  border-radius: 5px 0 0 5px;
+}
+
+.pause {
+  border-radius: 0 5px 5px 0;
+}
