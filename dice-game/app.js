@@ -22,6 +22,18 @@ const infoToggler = document.querySelector(".infoToggler");
 const btnStart = document.querySelector(".btn-start");
 const infoWrapper = document.querySelector(".info-wrapper");
 
+const player1TossName = document.querySelector(".player-1-toss h1");
+const player1Toss = document.querySelector(".player-1-toss p");
+
+const player2TossName = document.querySelector(".player-2-toss h1");
+const player2Toss = document.querySelector(".player-2-toss p");
+
+const coin = document.querySelector(".coin");
+const coinBtn = document.querySelector(".coin button");
+
+const resultCoinToss = document.querySelector("toss-section h1 span");
+const tossWinPlayer = document.querySelector("toss-section p span");
+
 info.style.display = "none";
 infoWrapper.style.display = "none";
 
@@ -35,6 +47,8 @@ const dice5 = document.querySelector(".dice-5");
 const dice6 = document.querySelector(".dice-6");
 
 const diceList = [dice1, dice2, dice3, dice4, dice5, dice6];
+
+const tossList = ["Heads", "Tails"];
 
 function clearDice() {
   for (let dice of diceList) {
@@ -206,3 +220,22 @@ function inputName(e) {
     playerName = document.querySelectorAll(".name");
   }
 }
+
+coinBtn.addEventListener("click", () => {
+  if (coin.style.animation) {
+    coin.style.animation = "none";
+  } else {
+    let randomTossPlayer = Math.floor(Math.random() * 2) + 1;
+    coin.style.animation = "1s ease 0s infinite normal none running rotate";
+    if (randomTossPlayer === 1) {
+      player1Toss.textContent = "Heads";
+      player2Toss.textContent = "Tails";
+    } else {
+      player1Toss.textContent = "Tails";
+      player2Toss.textContent = "Heads";
+    }
+
+    let resultToss = Math.floor(Math.random() * 2) + 1;
+    resultCoinToss.textContent = resultToss;
+  }
+});

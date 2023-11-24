@@ -327,25 +327,18 @@ i {
   grid-area: 2 / 2 / span 1 / span 1;
   place-self: center;
   border: 2px solid;
-  position: relative;
-  height: 120px;
-  width: 120px;
-  padding: 0.2em;
-  /* animation: rotate 1s infinite; */
-}
-
-.coin-front,
-.coin-back {
-  height: 100px;
-  width: 100px;
+  height: 130px;
+  width: 130px;
+  animation: none;
   border-radius: 50%;
-  position: absolute;
+  display: grid;
 }
 
-.coin-front {
-  background-color: green;
-}
-
-.coin-back {
-  background-color: blue;
+.coin button {
+  place-self: center;
+  font-size: 1.5rem;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
 }
