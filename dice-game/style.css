@@ -202,7 +202,6 @@ i {
 }
 
 .info {
-  background-color: #fff;
   height: 60vh;
   width: 60vw;
   display: grid;
@@ -254,4 +253,99 @@ i {
 
 .transparent-background {
   background-color: rgba(137, 207, 243, 0.5);
+}
+
+.toss {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toss-wrapper {
+  background-color: #fff;
+  height: 70vh;
+  width: 60vw;
+  display: grid;
+  grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+  font-size: 1.5rem;
+  position: absolute;
+  transform: translateY(-100%);
+  animation: info-animation 0.5s forwards;
+  text-align: center;
+}
+
+@keyframes info-animation {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.toss-section {
+  grid-area: 3 / 1 / span 1 / span 3;
+  place-self: center;
+}
+
+.player-1-toss,
+.player-2-toss {
+  place-self: center;
+}
+
+.toss p {
+  margin: 20px 0;
+}
+
+.toss-heading {
+  grid-area: 1 / 1 / span 1 / span 3;
+  place-self: center;
+}
+
+.player-1-toss {
+  grid-area: 2 / 1 / span 1 / span 1;
+}
+
+.player-2-toss {
+  grid-area: 2 / 3 / span 1 / span 1;
+}
+
+.rotated {
+  background-color: pink;
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate3d(0, 1, 0, 0);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+.coin {
+  grid-area: 2 / 2 / span 1 / span 1;
+  place-self: center;
+  border: 2px solid;
+  position: relative;
+  height: 120px;
+  width: 120px;
+  padding: 0.2em;
+  /* animation: rotate 1s infinite; */
+}
+
+.coin-front,
+.coin-back {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.coin-front {
+  background-color: green;
+}
+
+.coin-back {
+  background-color: blue;
 }
