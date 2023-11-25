@@ -31,8 +31,8 @@ const player2Toss = document.querySelector(".player-2-toss p");
 const coin = document.querySelector(".coin");
 const coinBtn = document.querySelector(".coin button");
 
-const resultCoinToss = document.querySelector("toss-section h1 span");
-const tossWinPlayer = document.querySelector("toss-section p span");
+const resultCoinToss = document.querySelector(".toss-section h1 span");
+const tossWinPlayer = document.querySelector(".toss-section p span");
 
 info.style.display = "none";
 infoWrapper.style.display = "none";
@@ -221,21 +221,38 @@ function inputName(e) {
   }
 }
 
+coinBtn.textContent = "Start";
+
 coinBtn.addEventListener("click", () => {
-  if (coin.style.animation) {
-    coin.style.animation = "none";
+  let randomTossPlayer = Math.floor(Math.random() * 2) + 1;
+  coin.style.animation = "1s ease 0s infinite normal none running rotate";
+  if (randomTossPlayer === 1) {
+    player1Toss.textContent = "Heads";
+    player2Toss.textContent = "Tails";
   } else {
-    let randomTossPlayer = Math.floor(Math.random() * 2) + 1;
-    coin.style.animation = "1s ease 0s infinite normal none running rotate";
-    if (randomTossPlayer === 1) {
-      player1Toss.textContent = "Heads";
-      player2Toss.textContent = "Tails";
+    player1Toss.textContent = "Tails";
+    player2Toss.textContent = "Heads";
+  }
+
+  setTimeout(() => {
+    coin.style.animation = "none";
+    let resultToss = Math.floor(Math.random() * 2);
+    resultCoinToss.textContent = tossList[resultToss];
+
+    if (tossList[resultToss] === "Heads") {
+      coinBtn.style.backgroundColor = "red";
+      coinBtn.style.color = "white";
+      coinBtn.textContent = "Heads";
     } else {
-      player1Toss.textContent = "Tails";
-      player2Toss.textContent = "Heads";
+      coinBtn.style.backgroundColor = "green";
+      coinBtn.style.color = "white";
+      coinBtn.textContent = "Tails";
     }
 
-    let resultToss = Math.floor(Math.random() * 2) + 1;
-    resultCoinToss.textContent = resultToss;
-  }
+    if (player1Toss.textContent.trim() === tossList[resultToss]) {
+      tossWinPlayer.textContent = playerName1.textContent;
+    } else {
+      tossWinPlayer.textContent = playerName2.textContent;
+    }
+  }, 3000);
 });

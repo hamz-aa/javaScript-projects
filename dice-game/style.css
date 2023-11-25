@@ -326,6 +326,7 @@ i {
 .coin {
   grid-area: 2 / 2 / span 1 / span 1;
   place-self: center;
+  margin-bottom: 30px;
   border: 2px solid;
   height: 130px;
   width: 130px;
@@ -335,6 +336,8 @@ i {
 }
 
 .coin button {
+  background-color: #f3b664;
+  color: #000;
   place-self: center;
   font-size: 1.5rem;
   padding: 0;
