@@ -34,10 +34,21 @@ const coinBtn = document.querySelector(".coin button");
 const resultCoinToss = document.querySelector(".toss-section h1 span");
 const tossWinPlayer = document.querySelector(".toss-section p span");
 
+const toss = document.querySelector(".toss");
+toss.style.display = "none";
+
+coinBtn.textContent = "Start";
+
 info.style.display = "none";
 infoWrapper.style.display = "none";
 
 let toggleFlag = true;
+
+const win = document.querySelector(".win");
+const winningPlayer = document.querySelector(".win h1 span");
+const playAgainBtn = document.querySelector(".win button");
+
+win.style.display = "none";
 
 const dice1 = document.querySelector(".dice-1");
 const dice2 = document.querySelector(".dice-2");
@@ -74,9 +85,6 @@ gridAreaReset();
 player1 = true;
 player2 = false;
 
-playerName1.style.border = "2px solid";
-playerName2.style.border = "none";
-
 totalScore.forEach((total) => {
   total.textContent = 0;
 });
@@ -93,6 +101,10 @@ newGame.addEventListener("click", () => {
   score.forEach((score) => {
     score.textContent = 0;
   });
+
+  toss.style.display = "flex";
+  player1TossName.textContent = playerName1.textContent;
+  player2TossName.textContent = playerName2.textContent;
 });
 
 rollDice.addEventListener("click", () => {
@@ -152,6 +164,12 @@ rollDice.addEventListener("click", () => {
   } else {
     player2Score.textContent = parseInt(player2Score.textContent) + score;
   }
+
+  if (parseInt(player1Score.textContent.trim()) >= 50) {
+    playerWins(playerName1.textContent);
+  } else if (parseInt(player2Score.textContent.trim()) >= 50) {
+    playerWins(playerName2.textContent);
+  }
 });
 
 holdDice.addEventListener("click", () => {
@@ -173,6 +191,12 @@ holdDice.addEventListener("click", () => {
       parseInt(player2TotalScore.textContent) +
       parseInt(player2Score.textContent);
     player2Score.textContent = 0;
+  }
+
+  if (parseInt(player1TotalScore.textContent.trim()) >= 50) {
+    playerWins(playerName1.textContent);
+  } else if (parseInt(player2TotalScore.textContent.trim()) >= 50) {
+    playerWins(playerName2.textContent);
   }
 });
 
@@ -221,8 +245,6 @@ function inputName(e) {
   }
 }
 
-coinBtn.textContent = "Start";
-
 coinBtn.addEventListener("click", () => {
   let randomTossPlayer = Math.floor(Math.random() * 2) + 1;
   coin.style.animation = "1s ease 0s infinite normal none running rotate";
@@ -251,8 +273,35 @@ coinBtn.addEventListener("click", () => {
 
     if (player1Toss.textContent.trim() === tossList[resultToss]) {
       tossWinPlayer.textContent = playerName1.textContent;
+      playerName1.style.border = "2px solid";
+      playerName2.style.border = "none";
     } else {
       tossWinPlayer.textContent = playerName2.textContent;
+      playerName2.style.border = "2px solid";
+      playerName1.style.border = "none";
     }
+
+    setTimeout(() => {
+      toss.style.display = "none";
+    }, 2000);
   }, 3000);
+});
+
+function playerWins(player) {
+  win.style.display = "flex";
+  winningPlayer.textContent = player;
+}
+
+playAgainBtn.addEventListener("click", () => {
+  win.style.display = "none";
+  clearDice();
+  gridAreaReset();
+
+  totalScore.forEach((total) => {
+    total.textContent = 0;
+  });
+
+  score.forEach((score) => {
+    score.textContent = 0;
+  });
 });
