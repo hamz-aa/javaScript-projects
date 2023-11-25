@@ -34,6 +34,7 @@ const coinBtn = document.querySelector(".coin button");
 const resultCoinToss = document.querySelector(".toss-section h1 span");
 const tossWinPlayer = document.querySelector(".toss-section p span");
 
+const tossWrapper = document.querySelector(".toss-wrapper");
 const toss = document.querySelector(".toss");
 toss.style.display = "none";
 
@@ -45,6 +46,7 @@ infoWrapper.style.display = "none";
 let toggleFlag = true;
 
 const win = document.querySelector(".win");
+const winWrapper = document.querySelector(".win-wrapper");
 const winningPlayer = document.querySelector(".win h1 span");
 const playAgainBtn = document.querySelector(".win button");
 
@@ -102,9 +104,11 @@ newGame.addEventListener("click", () => {
     score.textContent = 0;
   });
 
-  toss.style.display = "flex";
+  // toss.style.display = "flex";
   player1TossName.textContent = playerName1.textContent;
   player2TossName.textContent = playerName2.textContent;
+
+  toggleEffect(toss, tossWrapper);
 });
 
 rollDice.addEventListener("click", () => {
@@ -144,6 +148,8 @@ rollDice.addEventListener("click", () => {
     if (player1) {
       player1 = false;
       player2 = true;
+      playerName2.style.backgroundColor = "#eee2de";
+      playerName1.style.backgroundColor = "transparent";
       playerName2.style.border = "2px solid";
       playerName1.style.border = "none";
       player1Score.textContent = 0;
@@ -151,6 +157,8 @@ rollDice.addEventListener("click", () => {
     } else {
       player2 = false;
       player1 = true;
+      playerName1.style.backgroundColor = "#eee2de";
+      playerName2.style.backgroundColor = "transparent";
       playerName2.style.border = "none";
       playerName1.style.border = "2px solid";
       player2Score.textContent = 0;
@@ -178,6 +186,8 @@ holdDice.addEventListener("click", () => {
     player2 = true;
     playerName2.style.border = "2px solid";
     playerName1.style.border = "none";
+    playerName2.style.backgroundColor = "#eee2de";
+    playerName1.style.backgroundColor = "transparent";
     player1TotalScore.textContent =
       parseInt(player1TotalScore.textContent) +
       parseInt(player1Score.textContent);
@@ -187,6 +197,8 @@ holdDice.addEventListener("click", () => {
     player1 = true;
     playerName2.style.border = "none";
     playerName1.style.border = "2px solid";
+    playerName1.style.backgroundColor = "#eee2de";
+    playerName2.style.backgroundColor = "transparent";
     player2TotalScore.textContent =
       parseInt(player2TotalScore.textContent) +
       parseInt(player2Score.textContent);
@@ -201,17 +213,7 @@ holdDice.addEventListener("click", () => {
 });
 
 infoToggler.addEventListener("click", () => {
-  if (toggleFlag) {
-    infoWrapper.style.display = "flex";
-    info.style.display = "grid";
-    infoWrapper.classList.add("transparent-background");
-    toggleFlag = false;
-  } else {
-    infoWrapper.style.display = "none";
-    infoWrapper.classList.remove("transparent-background");
-    info.style.display = "none";
-    toggleFlag = true;
-  }
+  toggleEffect(infoWrapper, info);
 });
 
 btnStart.addEventListener("click", () => {
@@ -274,11 +276,15 @@ coinBtn.addEventListener("click", () => {
     if (player1Toss.textContent.trim() === tossList[resultToss]) {
       tossWinPlayer.textContent = playerName1.textContent;
       playerName1.style.border = "2px solid";
+      playerName1.style.backgroundColor = "#eee2de";
       playerName2.style.border = "none";
+      playerName2.style.backgroundColor = "none";
     } else {
       tossWinPlayer.textContent = playerName2.textContent;
       playerName2.style.border = "2px solid";
+      playerName2.style.backgroundColor = "#eee2de";
       playerName1.style.border = "none";
+      playerName1.style.backgroundColor = "none";
     }
 
     setTimeout(() => {
@@ -288,8 +294,9 @@ coinBtn.addEventListener("click", () => {
 });
 
 function playerWins(player) {
-  win.style.display = "flex";
   winningPlayer.textContent = player;
+
+  toggleEffect(win, winWrapper);
 }
 
 playAgainBtn.addEventListener("click", () => {
@@ -305,3 +312,17 @@ playAgainBtn.addEventListener("click", () => {
     score.textContent = 0;
   });
 });
+
+function toggleEffect(parent, child) {
+  if (toggleFlag) {
+    parent.style.display = "flex";
+    child.style.display = "grid";
+    parent.classList.add("transparent-background");
+    toggleFlag = false;
+  } else {
+    parent.style.display = "none";
+    parent.classList.remove("transparent-background");
+    child.style.display = "none";
+    toggleFlag = true;
+  }
+}

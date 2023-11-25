@@ -12,9 +12,10 @@
     <script src="app.js" defer></script>
   </head>
   <body>
+    <!-- main game  -->
     <section class="game">
       <div class="game-wrapper">
-        <div class="player-1">
+        <div class="player-1 player">
           <h1 class="name name-1">PLAYER 1</h1>
           <h2 class="total-score total-score-1">10</h2>
           <div class="current-score current-score-1">
@@ -22,7 +23,7 @@
             <p class="score score-1">10</p>
           </div>
         </div>
-        <div class="player-2">
+        <div class="player-2 player">
           <h1 class="name name-2">PLAYER 2</h1>
           <h2 class="total-score total-score-2">8</h2>
           <div class="current-score current-score-2">
@@ -52,10 +53,11 @@
       </div>
     </section>
 
+    <!-- info displaying section  -->
     <span class="infoToggler">❔</span>
 
     <div class="info-wrapper">
-      <div class="info">
+      <div class="info utility primary-box">
         <ul>
           <li>Welcome to the Dice game.</li>
           <li>This Game can be played by two players.</li>
@@ -67,12 +69,13 @@
           <li>You can give turn to opponent by clicking the Hold button.</li>
           <li>Have a nice game.</li>
         </ul>
-        <button class="btn-start">Done Reading</button>
+        <button class="btn-start primary-btn">Done Reading</button>
       </div>
     </div>
 
+    <!-- toss section  -->
     <div class="toss">
-      <div class="toss-wrapper">
+      <div class="toss-wrapper utility primary-box">
         <h1 class="toss-heading">TOSS</h1>
         <div class="player-1-toss">
           <h1>Player 1</h1>
@@ -90,11 +93,12 @@
       </div>
     </div>
 
+    <!-- winner displaying section  -->
     <div class="win">
-      <div class="win-wrapper">
+      <div class="win-wrapper primary-box">
         <h1>Congratulations!</h1>
         <h1><span></span> Wins</h1>
-        <button>Play Again</button>
+        <button class="primary-btn">Play Again</button>
       </div>
     </div>
   </body>

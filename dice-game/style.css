@@ -22,6 +22,62 @@ body {
   --secondary: #eeaeca;
 }
 
+/* utility animation class  */
+.utility {
+  display: grid;
+  font-size: 1.5rem;
+  position: absolute;
+  transform: translateY(-100%);
+  animation: utility-animation 0.5s forwards;
+}
+
+@keyframes utility-animation {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.rotated {
+  background-color: pink;
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate3d(0, 1, 0, 0);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+.transparent-background {
+  background-color: rgba(137, 207, 243, 0.5);
+}
+
+.primary-box {
+  background-color: #c683d7;
+  color: #2b2a4c;
+}
+
+.primary-btn {
+  background-color: #c683d7;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 1.2rem;
+  padding: 0.5em 1em;
+  place-self: center;
+  margin-bottom: 50px;
+}
+
+.primary-btn:hover {
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  background-color: #fff;
+  color: #2b2a4c;
+  border: 2px solid 2B2A4C;
+}
+
+/* game section css  */
 .game {
   display: flex;
   justify-content: center;
@@ -50,29 +106,29 @@ body {
   align-items: center;
 }
 
-.player-1 {
+.player {
   width: 50%;
-  background-color: var(--primary);
-  border-radius: 10px 0 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
+.player-1 {
+  background-color: var(--primary);
+  border-radius: 10px 0 0 10px;
+}
+
 .player-2 {
-  width: 50%;
   background-color: var(--secondary);
   border-radius: 0 10px 10px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .name {
   font-weight: 400;
   font-size: 2rem;
+  padding: 0.3em;
+  border-radius: 8px;
 }
 
 .total-score {
@@ -115,26 +171,28 @@ button {
 }
 
 button:hover {
-  background-color: #f4f4f4;
+  background-color: #f4f4f4bd;
 }
 
 i {
   margin-right: 8px;
 }
 
+/* dice css  */
 .show {
   height: 70px;
   width: 70px;
   background-color: #fff;
   display: grid;
   place-items: center;
+  border-radius: 5px;
 }
 
 .show span {
   background-color: #000;
   display: inline-block;
-  height: 9px;
-  width: 9px;
+  height: 10px;
+  width: 10px;
   border-radius: 50%;
 }
 
@@ -146,20 +204,9 @@ i {
   grid-template: 1fr 1fr / 1fr 1fr;
 }
 
-/* .dice-2 {
-    grid-area: 2 / 2;
-} */
-
 .three {
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
 }
-
-/* .dice-2 {
-    grid-area: 2 / 2;
-}
-.dice-3 {
-    grid-area: 3 / 3;
-} */
 
 .four {
   grid-template: 1fr 1fr / 1fr 1fr;
@@ -169,26 +216,11 @@ i {
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
 }
 
-/* .dice-2 {
-    grid-area: 1 / 3;
-}
-
-.dice-3 {
-    grid-area: 2 / 2;
-}
-
-.dice-4 {
-    grid-area: 3 / 1;
-}
-
-.dice-5 {
-    grid-area: 3 / 3;
-} */
-
 .six {
   grid-template: 1fr 1fr 1fr / 1fr 1fr;
 }
 
+/* info section css  */
 .infoToggler {
   position: absolute;
   top: 8%;
@@ -201,22 +233,14 @@ i {
   background-color: #fff;
 }
 
+.infoToggler:hover {
+  transition: background-color 0.5s ease-in-out;
+  background-color: #000;
+}
+
 .info {
   height: 60vh;
   width: 60vw;
-  display: grid;
-  font-size: 1.5rem;
-  position: absolute;
-  transform: translateY(-100%);
-  animation: info-animation 0.5s forwards;
-  background-color: #f3b664;
-  color: #fff;
-}
-
-@keyframes info-animation {
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .info-wrapper {
@@ -233,16 +257,6 @@ i {
   margin-top: 30px;
 }
 
-.btn-start {
-  background-color: #fff;
-  font-size: 1.2rem;
-  color: #f3b664;
-  padding: 0.5em 1em;
-  place-self: center;
-  margin-bottom: 50px;
-  border: 2px solid #f3b664;
-}
-
 .name-input {
   outline: none;
   border: none;
@@ -251,10 +265,7 @@ i {
   padding: 0 0.6em;
 }
 
-.transparent-background {
-  background-color: rgba(137, 207, 243, 0.5);
-}
-
+/* toss section css  */
 .toss {
   position: absolute;
   inset: 0;
@@ -264,22 +275,11 @@ i {
 }
 
 .toss-wrapper {
-  background-color: #fff;
+  color: #2b2a4c;
   height: 70vh;
   width: 60vw;
-  display: grid;
   grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
-  font-size: 1.5rem;
-  position: absolute;
-  transform: translateY(-100%);
-  animation: info-animation 0.5s forwards;
   text-align: center;
-}
-
-@keyframes info-animation {
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .toss-section {
@@ -309,20 +309,7 @@ i {
   grid-area: 2 / 3 / span 1 / span 1;
 }
 
-.rotated {
-  background-color: pink;
-  animation: rotate 1s infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate3d(0, 1, 0, 0);
-  }
-  to {
-    transform: rotate3d(0, 1, 0, 360deg);
-  }
-}
-
+/* coin css  */
 .coin {
   grid-area: 2 / 2 / span 1 / span 1;
   place-self: center;
@@ -336,8 +323,6 @@ i {
 }
 
 .coin button {
-  background-color: #f3b664;
-  color: #000;
   place-self: center;
   font-size: 1.5rem;
   padding: 0;
@@ -346,6 +331,7 @@ i {
   border-radius: 50%;
 }
 
+/* win section css  */
 .win {
   position: absolute;
   inset: 0;
@@ -355,7 +341,6 @@ i {
 }
 
 .win-wrapper {
-  background-color: #fff;
   height: 70vh;
   width: 60vw;
   display: flex;
@@ -366,7 +351,7 @@ i {
   font-size: 1.5rem;
   position: absolute;
   transform: translateY(-100%);
-  animation: info-animation 0.5s forwards;
+  animation: utility-animation 0.5s forwards;
   text-align: center;
 }
 
