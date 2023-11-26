@@ -104,7 +104,6 @@ newGame.addEventListener("click", () => {
     score.textContent = 0;
   });
 
-  // toss.style.display = "flex";
   player1TossName.textContent = playerName1.textContent;
   player2TossName.textContent = playerName2.textContent;
 
@@ -173,9 +172,17 @@ rollDice.addEventListener("click", () => {
     player2Score.textContent = parseInt(player2Score.textContent) + score;
   }
 
-  if (parseInt(player1Score.textContent.trim()) >= 50) {
+  if (
+    parseInt(player1Score.textContent.trim()) +
+      parseInt(player1TotalScore.textContent) >=
+    50
+  ) {
     playerWins(playerName1.textContent);
-  } else if (parseInt(player2Score.textContent.trim()) >= 50) {
+  } else if (
+    parseInt(player2Score.textContent.trim()) +
+      parseInt(player2TotalScore.textContent) >=
+    50
+  ) {
     playerWins(playerName2.textContent);
   }
 });
@@ -217,10 +224,7 @@ infoToggler.addEventListener("click", () => {
 });
 
 btnStart.addEventListener("click", () => {
-  infoWrapper.style.display = "none";
-  infoWrapper.classList.remove("transparent-background");
-  info.style.display = "none";
-  toggleFlag = true;
+  toggleEffect(infoWrapper, info);
 });
 
 let removedElement;
@@ -288,18 +292,21 @@ coinBtn.addEventListener("click", () => {
     }
 
     setTimeout(() => {
-      toss.style.display = "none";
+      toggleEffect(toss, tossWrapper);
     }, 2000);
   }, 3000);
 });
 
 function playerWins(player) {
   winningPlayer.textContent = player;
-
   toggleEffect(win, winWrapper);
 }
 
 playAgainBtn.addEventListener("click", () => {
+  playerName2.style.border = "none";
+  playerName2.style.backgroundColor = "none";
+  playerName1.style.border = "none";
+  playerName1.style.backgroundColor = "none";
   win.style.display = "none";
   clearDice();
   gridAreaReset();
@@ -311,6 +318,8 @@ playAgainBtn.addEventListener("click", () => {
   score.forEach((score) => {
     score.textContent = 0;
   });
+
+  toggleEffect(win, winWrapper);
 });
 
 function toggleEffect(parent, child) {
