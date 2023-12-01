@@ -5,15 +5,13 @@ const confirmPassword = document.querySelector("#confirm-signup-password");
 
 const signupBtn = document.querySelector(".signup-btn");
 
-username.value = "";
-email.value = "";
-password.value = "";
-confirmPassword.value = "";
+if (sessionStorage.getItem("current user"))
+  window.location.href = "../home.html";
 
 signupBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const users = JSON.parse(sessionStorage.getItem("users")) || [];
 
   if (
     !username.value ||
@@ -29,11 +27,6 @@ signupBtn.addEventListener("click", (e) => {
     return alert("Password does not match Confirm Password");
   }
 
-  username.value = "";
-  email.value = "";
-  password.value = "";
-  confirmPassword.value = "";
-
   const user = {
     name: username.value,
     email: email.value,
@@ -42,7 +35,12 @@ signupBtn.addEventListener("click", (e) => {
 
   users.push(user);
 
-  localStorage.setItem("users", JSON.stringify(users));
+  sessionStorage.setItem("users", JSON.stringify(users));
+
+  username.value = "";
+  email.value = "";
+  password.value = "";
+  confirmPassword.value = "";
 
   window.location.href = "../login/login.html";
 });
