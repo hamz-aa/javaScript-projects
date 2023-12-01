@@ -6,7 +6,7 @@ const confirmPassword = document.querySelector("#confirm-signup-password");
 const signupBtn = document.querySelector(".signup-btn");
 
 if (sessionStorage.getItem("current user"))
-  window.location.href = "../home.html";
+  window.location.href = "../home/home.html";
 
 signupBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -42,5 +42,5 @@ signupBtn.addEventListener("click", (e) => {
   password.value = "";
   confirmPassword.value = "";
 
-  window.location.href = "../login/login.html";
+  window.location.href = "../signup/signup.html";
 });

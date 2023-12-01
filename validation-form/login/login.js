@@ -4,7 +4,7 @@ const password = document.querySelector("#login-password");
 const loginBtn = document.querySelector(".login-btn");
 
 if (sessionStorage.getItem("current user"))
-  window.location.href = "../home.html";
+  window.location.href = "../home/home.html";
 
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -42,5 +42,5 @@ loginBtn.addEventListener("click", (e) => {
   username.value = "";
   password.value = "";
 
-  window.location.href = "../home.html";
+  window.location.href = "../home/home.html";
 });
