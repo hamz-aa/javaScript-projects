@@ -42,5 +42,5 @@ signupBtn.addEventListener("click", (e) => {
   password.value = "";
   confirmPassword.value = "";
 
-  window.location.href = "../signup/signup.html";
+  window.location.href = "../login/login.html";
 });

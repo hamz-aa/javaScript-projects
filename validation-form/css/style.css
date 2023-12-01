@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-  max-width: 1080px;
+  max-width: 1200px;
   width: 100%;
   margin: auto;
 }
@@ -30,25 +30,28 @@ li {
 
 .top-bar {
   height: 8px;
-  width: 412px;
+  width: 100%;
   background-color: var(--red);
   position: absolute;
-  top: 7%;
-  left: 50%;
-  transform: translate(-50%, 0);
+  top: -10%;
   border-radius: 1px;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 div.green {
   background-color: var(--green);
-  top: 16%;
+  top: -12%;
 }
 
 .form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -190,4 +193,11 @@ ul li a {
 
 .active {
   animation: sidebar-animation 1s forwards ease;
+}
+
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
