@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 div.search {
   display: flex;
   align-items: center;
@@ -24,6 +29,21 @@ div.search {
   cursor: pointer;
 }
 
-.card {
+.job-card {
+  padding: 2em;
   margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #4838b2;
+  max-width: 40%;
+  min-width: 35%;
+}
+
+.job-card > *:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.job-card:last-child {
+  margin-bottom: 50px;
 }

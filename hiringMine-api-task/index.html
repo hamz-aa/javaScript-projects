@@ -19,12 +19,17 @@
         <button class="search-btn" onclick="searchHandler()">Search</button>
       </div>
 
-      <div class="job-card">
-        <p class="company-name"></p>
-        <p class="position"></p>
-        <p class="description"></p>
-        <p class="location"></p>
-      </div>
+      <template>
+        <div class="job-card">
+          <p class="company-name" style="font-weight: bold"></p>
+          <p class="position" style="color: #4838b2; font-weight: 600"></p>
+          <p class="designation" style="color: #4838b2; font-weight: 600"></p>
+          <p class="description"></p>
+          <p class="location"></p>
+        </div>
+      </template>
+
+      <div class="card-wrapper"></div>
     </div>
   </body>
 </html>
