@@ -36,8 +36,7 @@ div.search {
   text-align: center;
   border-radius: 10px;
   border: 1px solid #4838b2;
-  max-width: 40%;
-  min-width: 35%;
+  min-width: 40%;
 }
 
 .job-card > *:not(:last-child) {
