@@ -22,10 +22,12 @@
           <input
             type="search"
             name=""
-            id=""
+            id="search-box"
             placeholder="Search over 1,000,000 recipes..."
           />
-          <button><i class="fa-solid fa-magnifying-glass"></i>SEARCH</button>
+          <button id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>SEARCH
+          </button>
         </div>
         <div class="misc d-flex">
           <div class="add">
@@ -39,15 +41,17 @@
         </div>
       </header>
       <aside class="left-section">
-        <div class="left-section-wrapper">
-          <div class="img-wrapper">
-            <img src="./assets/food.jpg" alt="" />
+        <template id="left-sec-template">
+          <div class="left-section-wrapper">
+            <div class="img-wrapper">
+              <img src="" alt="" />
+            </div>
+            <div class="img-content">
+              <p class="food-title"></p>
+              <p class="food-description"></p>
+            </div>
           </div>
-          <div class="img-content">
-            <p class="food-title">Pasta</p>
-            <p class="food-description">BBC Good Food</p>
-          </div>
-        </div>
+        </template>
       </aside>
       <aside class="right-section">
         <div class="starter-text">
