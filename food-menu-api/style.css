@@ -147,6 +147,7 @@ header p {
   height: 100%;
   padding: 0.8em;
   padding-left: 2em;
+  cursor: pointer;
 }
 
 .left-section img {
@@ -168,10 +169,12 @@ header p {
 p.food-title {
   color: #eb8a4a;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 p.food-description {
   font-size: 0.8rem;
   font-weight: 600;
   opacity: 0.4;
+  cursor: pointer;
 }

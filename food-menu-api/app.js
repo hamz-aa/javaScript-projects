@@ -15,10 +15,20 @@ searchBtn.addEventListener("click", () => {
 });
 
 function displaySearches(recipes) {
+  console.log(recipes);
   for (let i = 0; i < 10; i++) {
     let cloneNode = leftTemplate.content.cloneNode(true);
     let img = cloneNode.querySelector("img");
     let foodTitle = cloneNode.querySelector(".food-title");
     let foodDescription = cloneNode.querySelector(".food-description");
+
+    img.src = recipes[i].image_url;
+    foodTitle.textContent =
+      recipes[i].title.length > 20
+        ? recipes[i].title.slice(0, 22) + "..."
+        : recipes[i].title;
+    foodDescription.textContent = recipes[i].publisher;
+
+    leftSection.appendChild(cloneNode);
   }
 }
