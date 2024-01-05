@@ -22,6 +22,10 @@ function displaySearches(recipes) {
     let foodTitle = cloneNode.querySelector(".food-title");
     let foodDescription = cloneNode.querySelector(".food-description");
 
+    cloneNode
+      .querySelector(".left-section-wrapper")
+      .setAttribute("onclick", `displayRecipe('${recipes[i].id}')`);
+
     img.src = recipes[i].image_url;
     foodTitle.textContent =
       recipes[i].title.length > 20
@@ -31,4 +35,9 @@ function displaySearches(recipes) {
 
     leftSection.appendChild(cloneNode);
   }
+}
+
+function displayRecipe(recipeId) {
+  const recipeUrl = `https://forkify-api.herokuapp.com/api/v2/recipes/${recipeId}`;
+  fetch(recipeUrl).then((response) => console.log(response));
 }
