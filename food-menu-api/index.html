@@ -16,7 +16,7 @@
       <header class="header">
         <div class="logo d-flex">
           <i class="fa-solid fa-utensils"></i>
-          <p>forkify</p>
+          <p id="forkify">forkify</p>
         </div>
         <div class="search-box d-flex">
           <input
@@ -54,13 +54,13 @@
         </template>
       </aside>
       <aside class="right-section">
-        <!-- <div class="starter-text">
+        <div class="starter-text">
           <i class="fa-regular fa-face-smile"></i>
           <p>
             Start by searching for a recipe or <br />
             an ingredient. Have fun!
           </p>
-        </div> -->
+        </div>
         <template id="right-sec-template">
           <div class="recipe-description">
             <div class="recipe-img">
@@ -87,19 +87,15 @@
             <div class="recipe-ingredients">
               <p class="title">RECIPE INGREDIENTS</p>
               <div class="ingredients">
-                <ul>
-                  <li>
-                    <i class="fa-solid fa-check"></i>
-                    <p>a</p>
-                  </li>
-                </ul>
+                <ul></ul>
               </div>
             </div>
             <div class="recipe-footer">
               <p class="title">HOW TO COOK IT</p>
               <p class="sub-text">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Minima, iure.
+                This recipe was designed by
+                <a class="recipe-site" href="" target="_blank"></a>. Please
+                check out directions at their website.
               </p>
             </div>
           </div>

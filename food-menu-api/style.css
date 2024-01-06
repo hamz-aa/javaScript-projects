@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -51,6 +53,12 @@ header p {
   display: inline-block;
 }
 
+p#forkify {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  margin-left: 0.3em;
+}
+
 .logo {
   gap: 6px;
   align-items: center;
@@ -93,6 +101,10 @@ header p {
   cursor: pointer;
 }
 
+.search-box button:hover {
+  background-color: #e8b08a;
+}
+
 .search-box button i {
   margin-right: 10px;
   font-size: 1.1rem;
@@ -116,6 +128,7 @@ header p {
 .left-section {
   background-color: #fff;
   padding-top: 1em;
+  overflow-y: auto;
 }
 
 .right-section .starter-text {
@@ -141,6 +154,10 @@ header p {
   display: flex;
   gap: 10px;
   height: 100px;
+}
+
+.left-section-wrapper:hover {
+  background-color: #f3efee;
 }
 
 .left-section .img-wrapper {
@@ -251,15 +268,36 @@ ul {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  justify-items: start;
 }
 
 ul p {
   display: inline-block;
-  margin-left: 8px;
+}
+
+ul li {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  padding: 1em;
+}
+
+ul li i {
+  color: #eb8a4a;
 }
 
 .recipe-footer {
   padding: 2em;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  cursor: pointer;
 }

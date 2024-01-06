@@ -4,14 +4,33 @@ const leftTemplate = document.querySelector("#left-sec-template");
 const rightTemplate = document.querySelector("#right-sec-template");
 const leftSection = document.querySelector(".left-section");
 const rightSection = document.querySelector(".right-section");
+const starterText = document.querySelector(".starter-text");
 
 searchBtn.addEventListener("click", () => {
   const url = `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchValue}`;
 
   fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("response not found");
+      }
+    })
     .then((json) => json.data)
-    .then((data) => data.recipes)
+    .then((data) => {
+      if (data.recipes.length !== 0) {
+        return data.recipes;
+      } else {
+        // window.location.reload();
+        fetch(url)
+          .then((response) => response.json())
+          .then((json) => json.data)
+          .then((data) => data.recipes)
+          .then((recipes) => displaySearches(recipes))
+          .catch((err) => console.log(err));
+      }
+    })
     .then((recipes) => displaySearches(recipes))
     .catch((err) => console.log(err));
 });
@@ -41,7 +60,13 @@ function displaySearches(recipes) {
 function recipeHandler(recipeId) {
   const recipeUrl = `https://forkify-api.herokuapp.com/api/v2/recipes/${recipeId}`;
   fetch(recipeUrl)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("recipe not found");
+      }
+    })
     .then((json) => json.data)
     .then((data) => data.recipe)
     .then((recipe) => displayRecipe(recipe))
@@ -49,19 +74,36 @@ function recipeHandler(recipeId) {
 }
 
 function displayRecipe(recipe) {
+  starterText.style.display = "none";
+  rightSection.innerHTML = "";
+
   let cloneNode = rightTemplate.content.cloneNode(true);
   let img = cloneNode.querySelector("img");
   let recipeName = cloneNode.querySelector(".recipe-name");
   let time = cloneNode.querySelector(".time");
   let servings = cloneNode.querySelector(".serving-text");
+  let ul = cloneNode.querySelector("ul");
+  const recipeSite = cloneNode.querySelector(".recipe-site");
 
-  console.log(img, recipeName, time, servings);
-  console.log(recipe);
+  for (let ingredient of recipe.ingredients) {
+    let li = document.createElement("li");
+    let p = document.createElement("p");
+    let icon = document.createElement("i");
+    icon.setAttribute("class", "fa-solid fa-check");
+    p.textContent = `${ingredient.quantity ?? ""} ${ingredient.unit} ${
+      ingredient.description
+    }`;
+    li.appendChild(icon);
+    li.appendChild(p);
+    ul.appendChild(li);
+  }
 
   img.src = recipe.image_url;
   recipeName.textContent = recipe.title;
   time.textContent = recipe.cooking_time + " MINUTES";
   servings.textContent = recipe.servings + " SERVINGS";
+  recipeSite.textContent = recipe.publisher;
+  recipeSite.href = recipe.source_url;
 
   rightSection.appendChild(cloneNode);
 }
