@@ -288,6 +288,7 @@ ul li i {
 
 .recipe-footer {
   padding: 2em;
+  padding-bottom: 5em;
   text-align: center;
 }
 
@@ -300,4 +301,28 @@ a {
 a:hover {
   border-bottom: 1px solid;
   cursor: pointer;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  padding: 2em;
+}
+
+dialog button {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
 }

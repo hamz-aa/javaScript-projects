@@ -1,12 +1,18 @@
-const searchValue = document.querySelector("#search-box").value;
 const searchBtn = document.querySelector("#search-btn");
 const leftTemplate = document.querySelector("#left-sec-template");
 const rightTemplate = document.querySelector("#right-sec-template");
 const leftSection = document.querySelector(".left-section");
 const rightSection = document.querySelector(".right-section");
 const starterText = document.querySelector(".starter-text");
+const logo = document.querySelector(".logo");
+const modal = document.querySelector("dialog");
 
-searchBtn.addEventListener("click", () => {
+logo.addEventListener("click", () => window.location.reload());
+
+searchBtn.addEventListener("click", searchRecipeHandler);
+
+function searchRecipeHandler() {
+  const searchValue = document.querySelector("#search-box").value;
   const url = `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchValue}`;
 
   fetch(url)
@@ -21,21 +27,17 @@ searchBtn.addEventListener("click", () => {
     .then((data) => {
       if (data.recipes.length !== 0) {
         return data.recipes;
-      } else {
-        // window.location.reload();
-        fetch(url)
-          .then((response) => response.json())
-          .then((json) => json.data)
-          .then((data) => data.recipes)
-          .then((recipes) => displaySearches(recipes))
-          .catch((err) => console.log(err));
       }
     })
     .then((recipes) => displaySearches(recipes))
     .catch((err) => console.log(err));
-});
+}
 
 function displaySearches(recipes) {
+  if (!recipes) {
+    modal.showModal();
+  }
+  leftSection.innerHTML = "";
   for (let i = 0; i < 10; i++) {
     let cloneNode = leftTemplate.content.cloneNode(true);
     let img = cloneNode.querySelector("img");
@@ -106,4 +108,9 @@ function displayRecipe(recipe) {
   recipeSite.href = recipe.source_url;
 
   rightSection.appendChild(cloneNode);
+}
+
+function modalHandler() {
+  modal.close();
+  window.location.reload();
 }
