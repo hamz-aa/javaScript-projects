@@ -54,13 +54,56 @@
         </template>
       </aside>
       <aside class="right-section">
-        <div class="starter-text">
+        <!-- <div class="starter-text">
           <i class="fa-regular fa-face-smile"></i>
           <p>
             Start by searching for a recipe or <br />
             an ingredient. Have fun!
           </p>
-        </div>
+        </div> -->
+        <template id="right-sec-template">
+          <div class="recipe-description">
+            <div class="recipe-img">
+              <img src="" alt="" />
+              <p class="recipe-name"></p>
+            </div>
+            <div class="recipe-info">
+              <div class="info-box">
+                <div class="minutes">
+                  <i class="fa-regular fa-clock"></i>
+                  <p class="time"></p>
+                </div>
+                <div class="servings">
+                  <i class="fa-solid fa-user-group"></i>
+                  <p class="serving-text"></p>
+                  <i class="fa-solid fa-circle-plus"></i>
+                  <i class="fa-solid fa-circle-minus"></i>
+                </div>
+              </div>
+              <div class="bookmark-icon">
+                <i class="fa-solid fa-bookmark"></i>
+              </div>
+            </div>
+            <div class="recipe-ingredients">
+              <p class="title">RECIPE INGREDIENTS</p>
+              <div class="ingredients">
+                <ul>
+                  <li>
+                    <i class="fa-solid fa-check"></i>
+                    <p>a</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="recipe-footer">
+              <p class="title">HOW TO COOK IT</p>
+              <p class="sub-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Minima, iure.
+              </p>
+            </div>
+          </div>
+        </template>
       </aside>
     </main>
   </body>
