@@ -24,15 +24,25 @@ h1 {
   width: calc(100% - 3rem);
   margin: auto;
   margin-top: 1em;
+  overflow: hidden;
 }
 
 i {
   position: absolute;
-  background-color: #fff;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  font-size: 3rem;
+  font-size: 4rem;
+  color: #fff;
+  opacity: 0.2;
+}
+
+.carousel:hover i {
+  opacity: 0.5;
+}
+
+.carousel i:hover {
+  opacity: 0.8;
 }
 
 .icon-left {
@@ -48,25 +58,25 @@ i {
   width: 100%;
 }
 
-.img-1 {
-  /* left: 0; */
-  /* transform: translateX(-100%); */
+.animation-1 {
+  animation: slide-out 1s forwards;
 }
 
-.img-2 {
-  /* opacity: 0; */
-  /* left: 100%; */
+.animation-2 {
+  animation: slide-in 0.8s forwards;
 }
 
-.img-3 {
-  /* opacity: 0; */
-  /* left: 200%; */
+@keyframes slide-out {
+  100% {
+    transform: translateX(-150%);
+  }
 }
 
-.img-4 {
-  /* opacity: 0; */
-  /* left: 300%; */
-}
-
-@keyframes slide {
+@keyframes slide-in {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
